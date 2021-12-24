@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&family=Vujahday+Script&display=swap");
+.App {
+  text-align: center;
+  font-family: "Finger Paint", cursive;
+  font-size: 18px;
+  font-weight: 800;
+}
