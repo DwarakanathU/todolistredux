@@ -17,7 +17,7 @@ const AddTodo = () => {
   };
   return (
     <form onSubmit={handelFormSubmit}>
-      <div className="ui input ">
+      <div className="ui input stretched column">
         <input
           type="text"
           placeholder="Add Todo Item"
@@ -25,7 +25,7 @@ const AddTodo = () => {
         />
       </div>
 
-      <button className="ui blue button" type="submit">
+      <button className="ui blue button huge one wide column" type="submit">
         Add Item
       </button>
     </form>

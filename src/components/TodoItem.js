@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { deleteTodo, updateTodo } from "../redux/actions/actions";
+import { deleteTodo, updateTodo, completeTodo } from "../redux/actions/actions";
 
 const TodoItem = ({ task }) => {
   const [isUpdate, setIsUpdate] = useState(false);
@@ -29,7 +29,12 @@ const TodoItem = ({ task }) => {
       <div key={task.id} class="ui card four column grid">
         <div className="card">
           <div className="content">
-            <div className="ui small header">{task.message}</div>
+            <div
+              className="ui small header"
+              onDoubleClick={() => setIsUpdate(true)}
+            >
+              {task.message}
+            </div>
           </div>
         </div>
         <div className="extra content">
@@ -39,6 +44,15 @@ const TodoItem = ({ task }) => {
               onClick={() => setIsUpdate(true)}
             >
               edit
+            </button>
+
+            <button
+              className="ui basic blue button"
+              onClick={() =>
+                dispatch(completeTodo({ message: task.message, id: task.id }))
+              }
+            >
+              Done
             </button>
             <div
               className="ui basic red button"
